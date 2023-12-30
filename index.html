@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="192x192" href="android-chrome-192x192.png">
     <link rel="apple-touch-icon" sizes="512x512" href="android-chrome-512x512.png">
@@ -11,28 +13,18 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: black; /* Set background color to black */
-            color: white; /* Set text color to white */
+            background-color: black;
+            color: white;
         }
 
         h1 {
             color: #4f8a10;
-            animation: animateTitle 2s infinite alternate; /* Animation properties */
-        }
-
-        @keyframes animateTitle {
-            from {
-                content: "g";
-            }
-            to {
-                content: "get good nn";
-            }
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            color: white; /* Set table text color to white */
+            color: white;
         }
 
         th, td {
@@ -45,27 +37,46 @@
             background-color: #f5f5f5;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            animateTitle();
+        });
+
+        function animateTitle() {
+            const title = document.title;
+            const titleElement = document.querySelector('title');
+            const delay = 500; // Adjust the delay time in milliseconds
+
+            let index = 0;
+
+            function updateTitle() {
+                titleElement.textContent = title.substring(0, index);
+                index = (index + 1) % (title.length + 1);
+            }
+
+            setInterval(updateTitle, delay);
+        }
+    </script>
 </head>
 <body>
-<img src="android-chrome-192x192.png" alt="Icon"><h1>get good nn</h1>
+    <img src="android-chrome-192x192.png" alt="Icon">
+    <h1>get good nn</h1>
 
+    <p>Welcome.</p>
 
-<p>Welcome.</p>
-
-<table>
-    <tr>
-        <th>Link</th>
-        <th>Name</th>
-    </tr>
-    <tr>
-        <td><a href="https://getgood-nn.github.io/resolver/">resolver.html</a></td>
-        <td>Resolver</td>
-    </tr>
-    <tr>
-        <td><a href="/">soon</a></td>
-        <td>Soon</td>
-    </tr>
-</table>
-
+    <table>
+        <tr>
+            <th>Link</th>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td><a href="https://getgood-nn.github.io/resolver/">resolver.html</a></td>
+            <td>Resolver</td>
+        </tr>
+        <tr>
+            <td><a href="/">soon</a></td>
+            <td>Soon</td>
+        </tr>
+    </table>
 </body>
 </html>
