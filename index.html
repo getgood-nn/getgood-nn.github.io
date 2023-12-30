@@ -41,22 +41,19 @@
         document.addEventListener('DOMContentLoaded', function () {
             animateTitle();
         });
-
         function animateTitle() {
             const title = document.title;
             const titleElement = document.querySelector('title');
             const delay = 200; // Adjust the delay time in milliseconds
-
-            let index = 1;
-
+            let index = 0;
             function updateTitle() {
-                titleElement.textContent = title.substring(1, index);
+                titleElement.textContent = title.substring(0, index);
                 index = (index + 1) % (title.length + 1);
             }
-
             setInterval(updateTitle, delay);
         }
     </script>
+<title>get good nn</title>
 </head>
 <body>
     <img src="android-chrome-192x192.png" alt="Icon">
